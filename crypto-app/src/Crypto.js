@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Crypto = () => {
+const Crypto = ({name, image, symbol, price, volume}) => {
     return (
         <div className="crypto-container">
             <div className="crypto-row">
@@ -12,7 +12,7 @@ const Crypto = () => {
                 <div className="crypto-data">
                     <p className="crypto-price">Eur{price}</p>
                     <p className="crypto-volume">Eur{volume.toLocaleString()}</p>
-                    
+
                 </div>
             </div>
         </div>
