@@ -1,9 +1,9 @@
-.coin-container {
+.crypto-container {
     display: flex;
     justify-content: center;
   }
   
-  .coin-row {
+  .crypto-row {
     display: flex;
     flex-direction: row;
     justify-content: start;
@@ -13,7 +13,7 @@
     width: 900px;
   }
   
-  .coin {
+  .crypto {
     display: flex;
     align-items: center;
     padding-right: 24px;
@@ -21,41 +21,41 @@
     min-width: 300px;
   }
   
-  .coin h1 {
+  .crypto h1 {
     font-size: 16px;
     width: 150px;
   }
   
-  .coin img {
+  .crypto img {
     height: 30px;
     width: 30px;
     margin-right: 10px;
   }
   
-  .coin-symbol {
+  .crypto-symbol {
     text-transform: uppercase;
   }
   
-  .coin-data {
+  .crypto-data {
     display: flex;
     text-align: right;
     justify-content: space-between;
     width: 100%;
   }
   
-  .coin-price {
+  .crypto-price {
     width: 110px;
   }
   
-  .coin-volume {
+  .crypto-volume {
     width: 155px;
   }
   
-  .coin-marketcap {
+  .crypto-marketcap {
     width: 230px;
   }
   
-  .coin-percent {
+  .crypto-percent {
     width: 100px;
   }
   
