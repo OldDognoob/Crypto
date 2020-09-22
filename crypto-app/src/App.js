@@ -2,46 +2,60 @@ import React, { useState, useEffect } from "react";
 //axios
 import axios from "axios";
 import "./App.css";
-import Crypto from './Crypto';
+import Crypto from "./Crypto";
 
 function App() {
   const [crypto, setCrypto] = useState([]);
-  const [search, setSearch]=useState('');
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     axios
       .get(
-        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=100&page=1&sparkline=false"
+        'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false'
       )
-      .then((response) => {
-        setCrypto(response.data);
-        // console.log(res.data);
+      .then(res => {
+        setCrypto(res.data);
+        console.log(res.data);
       })
-      .catch((error) => console.log(error));
+      .catch(error => console.log(error));
   }, []);
 
-  const handleChange=e=>{
-    setSearch(e.target.value)
-  }
+  const handleChange = e => {
+    setSearch(e.target.value);
+  };
 
-  const filteredCrypto = crypto.filter(crypto => {
-  crypto.name.toLowerCase().includes(search.toLowerCase())
-  })
+  const filteredCrypto = crypto.filter(crypto =>
+    crypto.name.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
-    <div className="crypto-app">
-      <div className="crypto-search">
-        <h1 className="crypto-text">Search a crypto currency</h1>
+    <div className='crypto-app'>
+      <div className='crypto-search'>
+        <h1 className='crypto-text'>Search a currency</h1>
         <form>
-          <input type="text" placeholder="Search" className="crypto-input" onChange={handleChange}/>
+          <input
+            className='crypto-input'
+            type='text'
+            onChange={handleChange}
+            placeholder='Search'
+          />
         </form>
       </div>
-      {filteredCrypto.map(crypto =>{
-        
+      {filteredCrypto.map(crypto => {
+        return (
+          <Crypto
+            key={crypto.id}
+            name={crypto.name}
+            price={crypto.current_price}
+            symbol={crypto.symbol}
+            marketcap={crypto.total_volume}
+            volume={crypto.market_cap}
+            image={crypto.image}
+            priceChange={crypto.price_change_percentage_24h}
+          />
+        );
       })}
-
     </div>
-
   );
 }
 
