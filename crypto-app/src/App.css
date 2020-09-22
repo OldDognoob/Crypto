@@ -6,7 +6,7 @@
   padding: 0;
   font-family: 'Montserrat', sans-serif;
   background-color: #6565c4;
-  color: #fff;
+  color: rgb(235, 230, 230);
 }
 
 .crypto-app {
@@ -38,14 +38,14 @@
   border: none;
   background-image: linear-gradient(
     -225deg,
-    #ac32e4 0%,
-    #7918f2 48%,
-    #4801ff 100%
+    #d590f5 0%,
+    #592499 48%,
+    #552fb6 100%
   );
 
-  color: #e2e2e2;
+  color: #cfc2c2;
 }
 
 .coin-input::placeholder {
-  color: #e2e2e2;
+  color: #a73535;
 }
